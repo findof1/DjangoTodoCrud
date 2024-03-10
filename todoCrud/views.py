@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 def test(res):
   return JsonResponse({'test':'test'})
 
+@csrf_exempt
 def todos(request):
   todos = Todo.objects.all()
   todos_list = serializers.serialize('json', todos)
