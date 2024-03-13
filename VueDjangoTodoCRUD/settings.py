@@ -29,6 +29,29 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8080',
+    'http://192.168.1.5:8080'
+]
+
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "authorization",
+    "content-type",
+    "Content-Type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+)
+
+CORS_ALLOW_METHODS = (
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,8 +60,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'todoCrud',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,11 +75,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:8080',
-]
+
 
 ROOT_URLCONF = 'VueDjangoTodoCRUD.urls'
 
